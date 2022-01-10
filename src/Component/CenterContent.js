@@ -8,6 +8,7 @@ const CenterContent = () => {
         <>
             <Routes>
                 <Route path='/' element={<HomePage />} />
+                <Route path='/mail' element={<HomePage />} />
                 <Route path='/mail/airplane' element={<AirplanePage />} />
                 <Route path='/mail/car' element={<CarPage />} />
             </Routes>

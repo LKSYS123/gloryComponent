@@ -10,13 +10,25 @@ const MailList = () => {
                     <List>
                         {['Airplane', 'Car'].map((text, index) => (
                             <>
-                                <ListItem button key={text}>
-                                    <ListItemIcon style={{ minWidth: 30, }} >
-                                        {index % 2 === 0 ? <Link to='/mail/airplane'><AirplanemodeActive /></Link> : <Link to='/mail/car'><DirectionsCarFilled /></Link>}
-                                    </ListItemIcon>
-                                    <ListItemText primary={text} />
-                                    <Divider />
-                                </ListItem>
+                                {index % 2 === 0 ?
+                                    <Link to='/mail/airplane'>
+                                        <ListItem button key={text}>
+                                            <ListItemIcon style={{ minWidth: 30, color: '#3177d5' }} >
+                                                <AirplanemodeActive />
+                                            </ListItemIcon>
+                                            <ListItemText primary={text} />
+                                        </ListItem>
+                                    </Link>
+                                    :
+                                    <Link to='/mail/car'>
+                                        <ListItem button key={text}>
+                                            <ListItemIcon style={{ minWidth: 30, color: '#3177d5' }} >
+                                                <DirectionsCarFilled />
+                                            </ListItemIcon>
+                                            <ListItemText primary={text} />
+                                        </ListItem>
+                                    </Link>
+                                }
                                 <Divider />
                             </>
                         ))}

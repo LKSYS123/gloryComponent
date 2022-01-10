@@ -90,16 +90,30 @@ const Main = () => {
                         {/* 좌측 메뉴버튼 */}
                         <div className='sideMenu'>
                             <Divider />
-                            <List className='ddddddd'>
+                            <List>
                                 {['Home', 'Mail'].map((text, index) => (
                                     <>
-                                        <ListItem key={text} onClick={leftSideDrawer}>
-                                            <ListItemIcon style={{ minWidth: 30, color: '#3177d5' }} >
-                                                {index % 2 === 0 ? <Link to='/'><Home /></Link> : <Link to='/mail'><Mail /></Link>}
-                                            </ListItemIcon>
-                                            <ListItemText primary={text} />
-                                        </ListItem>
+                                        {index % 2 === 0 ?
+                                            <Link to='/'>
+                                                <ListItem button key={text} onClick={leftSideDrawer}>
+                                                    <ListItemIcon style={{ minWidth: 30, color: '#3177d5' }} >
+                                                        <Home />
+                                                    </ListItemIcon>
+                                                    <ListItemText primary={text} />
+                                                </ListItem>
+                                            </Link>
+                                            :
+                                            <Link to='/mail'>
+                                                <ListItem button key={text} onClick={leftSideDrawer}>
+                                                    <ListItemIcon style={{ minWidth: 30, color: '#3177d5' }} >
+                                                        <Mail />
+                                                    </ListItemIcon>
+                                                    <ListItemText primary={text} />
+                                                </ListItem>
+                                            </Link>
+                                        }
                                         <Divider />
+
                                     </>
                                 ))}
                             </List>
